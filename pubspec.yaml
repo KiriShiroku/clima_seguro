@@ -1,0 +1,52 @@
+name: clima_seguro
+description: "Aplicación Flutter para consultar el clima con integración segura de API REST."
+publish_to: 'none' # Evita publicación accidental en pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # 📡 HTTP: Para hacer peticiones GET/POST a la API
+  http: ^1.1.0
+
+  # 🔐 Dotenv: Para manejar claves secretas desde el archivo .env
+  flutter_dotenv: ^5.1.0
+
+  # 🎨 Íconos de estilo iOS (opcional)
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # ✅ Buenas prácticas y linting recomendadas para Dart 3.x
+  flutter_lints: ^5.0.0
+
+flutter:
+  # Incluye los íconos Material por defecto
+  uses-material-design: true
+
+  # 📁 Archivos de recursos que se deben incluir en la app
+  assets:
+    - .env
+
+# 📝 Notas:
+# - Asegúrate de tener un archivo .env en la raíz del proyecto con tu API key:
+#     API_KEY=tu_api_key_aqui
+#
+# - Este archivo está incluido en .gitignore (no se subirá a GitHub)
+#
+# - Usa flutter_dotenv para leer la variable:
+#     import 'package:flutter_dotenv/flutter_dotenv.dart';
+#     final apiKey = dotenv.env['API_KEY'];
+#
+# - Ejemplo de llamada a la API:
+#     final uri = Uri.https('api.openweathermap.org', '/data/2.5/weather', {
+#       'q': 'Querétaro,MX',
+#       'appid': apiKey,
+#       'units': 'metric'
+#     });
